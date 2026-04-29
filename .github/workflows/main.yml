@@ -20,5 +20,6 @@ jobs:
         distribution: temurin
         java-version: 21
     - name: Build project with Maven
-      run: cd ../../roman-number | mvn -B package --file pom.xml
+      working-directory: roman-number
+      run: mvn -B package --file pom.xml
       
