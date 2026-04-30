@@ -27,6 +27,7 @@ jobs:
       run: mvn clean test
     - name: Send coverage to Coveralls
       working-directory: roman-number
+      if: github.event_name == 'push'
       run: mvn coveralls:report
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN}} 
