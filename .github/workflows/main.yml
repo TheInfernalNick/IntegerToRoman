@@ -1,5 +1,8 @@
 name: Maven CI/CD
 
+permissions:
+  contents: read
+
 on:
   push:
     branches: [main, testing]
@@ -13,7 +16,7 @@ jobs:
   runs-on: ubuntu-latest
 
   steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v4
     - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
@@ -27,8 +30,8 @@ jobs:
       run: mvn clean test
     - name: Send coverage to Coveralls
       working-directory: roman-number
-      if: github.event_name == 'push'
       run: mvn coveralls:report
       env:
-        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN}} 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        COVERALLS_SERVICE_NAME: github 
       
