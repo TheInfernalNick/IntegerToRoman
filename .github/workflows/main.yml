@@ -26,6 +26,7 @@ jobs:
       working-directory: roman-number
       run: mvn clean test
     - name: Send coverage to Coveralls
+      working-directory: roman-number
       run: mvn coveralls:report
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN}} 
