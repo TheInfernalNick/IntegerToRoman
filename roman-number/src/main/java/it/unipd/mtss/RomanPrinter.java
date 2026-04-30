@@ -2,12 +2,17 @@ package it.unipd.mtss;
 
 public class RomanPrinter {
     public RomanPrinter(){
-        this.printAsciiArt("xvii");
+        for(int i =0;i<=1000;i++){
+            print(i);
+        }
+        print(0);
     }
-    public static String print(int num){ 
-        return printAsciiArt(IntegerToRoman.convert(num));
+    public void print(int num){ 
+        IntegerToRoman itr = new IntegerToRoman();
+        System.out.println(itr.convert(num));
+        printAsciiArt(itr.convert(num));
     } 
-    private static String printAsciiArt(String romanNumber){
+    private void printAsciiArt(String romanNumber){
         System.out.println("");
         String output1="";
         String output2="";
@@ -88,6 +93,5 @@ public class RomanPrinter {
         System.out.println(output4);
         System.out.println(output5);
         System.out.println(output6);
-        return null; 
     } 
 }
