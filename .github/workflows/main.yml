@@ -1,8 +1,5 @@
 name: Maven CI/CD
 
-permissions:
-  contents: read
-
 on:
   push:
     branches: [main, testing]
@@ -32,6 +29,4 @@ jobs:
       working-directory: roman-number
       run: mvn coveralls:report
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        COVERALLS_SERVICE_NAME: github 
-      
+        COVERALLS_REPO_TOKEN: ${{secrets.COVERALLS_REPO_TOKEN}}
