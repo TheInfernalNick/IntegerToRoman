@@ -22,4 +22,10 @@ jobs:
     - name: Build project with Maven
       working-directory: roman-number
       run: mvn -B package --file pom.xml
+    - name: Test and get report with JaCoCo
+      run: mvn clean test
+    - name: Send coverage to Coveralls
+      run: mvn coveralls:report
+      env:
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN}} 
       
