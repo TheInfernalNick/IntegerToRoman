@@ -1,15 +1,17 @@
 package it.unipd.mtss; 
 
+import java.util.Scanner;
+
 public class RomanPrinter {
+    Scanner scanner = new Scanner(System.in);
+    
     public RomanPrinter(){
-        for(int i =0;i<=1000;i++){
-            print(i);
-        }
-        print(0);
+        System.out.println("Inserisci un numero da convertire");
+        int number=scanner.nextInt();
+        print(number);
     }
     public void print(int num){ 
         IntegerToRoman itr = new IntegerToRoman();
-        System.out.println(itr.convert(num));
         printAsciiArt(itr.convert(num));
     } 
     private void printAsciiArt(String romanNumber){
