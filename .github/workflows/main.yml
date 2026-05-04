@@ -24,9 +24,6 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Test and get report with JaCoCo
       working-directory: roman-number
-      run: mvn clean test
-    - name: Send coverage to Coveralls
-      working-directory: roman-number
-      run: mvn coveralls:report -DrepoToken=$COVERALLS_REPO_TOKEN
+      run: mvn clean test jacoco:report coveralls:report -DrepoToken=$COVERALLS_REPO_TOKEN
       env:
         COVERALLS_REPO_TOKEN: ${{secrets.COVERALLS_REPO_TOKEN}}
