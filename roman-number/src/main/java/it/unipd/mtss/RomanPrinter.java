@@ -1,18 +1,17 @@
 package it.unipd.mtss; 
 
+import java.util.Scanner;
+
 public class RomanPrinter {
-    public RomanPrinter(){
-        for(int i =0;i<=1000;i++){
-            print(i);
-        }
-        print(0);
-    }
-    public void print(int num){ 
+
+    public RomanPrinter(){}
+    public String print(int num){ 
         IntegerToRoman itr = new IntegerToRoman();
-        System.out.println(itr.convert(num));
-        printAsciiArt(itr.convert(num));
+        String convertedString = itr.convert(num);
+        System.out.println(convertedString);
+        return printAsciiArt(convertedString);
     } 
-    private void printAsciiArt(String romanNumber){
+    private String printAsciiArt(String romanNumber){
         System.out.println("");
         String output1="";
         String output2="";
@@ -87,11 +86,8 @@ public class RomanPrinter {
                  break;
         };   
     }
-        System.out.println(output1);
-        System.out.println(output2);
-        System.out.println(output3);
-        System.out.println(output4);
-        System.out.println(output5);
-        System.out.println(output6);
+    String output = output1+"\n"+output2+"\n"+output3+"\n"+output4+"\n"+output5+"\n"+output6;
+    System.out.println(output);
+    return output;
     } 
 }
