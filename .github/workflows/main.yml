@@ -26,4 +26,7 @@ jobs:
       working-directory: roman-number
       run: mvn clean test jacoco:report
     - name: Upload to coveralls with github actions
-      run: coverallsapp/github-action@v2
+      uses: coverallsapp/github-action@v2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: roman-number/target/site/jacoco/jacoco.xml
