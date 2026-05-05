@@ -31,4 +31,5 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         path-to-lcov: roman-number/target/site/jacoco/jacoco.xml
     - name: Check correct style
-      run: mvn checkstyle:check 
+      run: mvn checkstyle:check
+      working-directory: roman-number 
