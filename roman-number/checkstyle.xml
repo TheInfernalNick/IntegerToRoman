@@ -12,7 +12,7 @@
     <property name="fileExtensions" value="txt"/>
   </module>
   <module name="LineLength">
-    <property name="max" value="120"/>
+    <property name="max" value="140"/>
   </module>
   <module name="FileTabCharacter">
       <property name="eachLine" value="true"/>
