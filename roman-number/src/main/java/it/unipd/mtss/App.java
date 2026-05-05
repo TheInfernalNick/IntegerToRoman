@@ -17,8 +17,9 @@ public class App
             System.out.println("Inserisci un numero e verrà convertito, inserisci un numero minore di 1 e interromperai l'esecuzione ");    
             Scanner scan = new Scanner(System.in);
             input = scan.nextInt();
-            if(input > 0)
+            if(input > 0){
                 new RomanPrinter(input);
+            }
         }
         
     }
